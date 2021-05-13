@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/billAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/billAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tipPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/tipPercent"
+        app:layout_constraintStart_toStartOf="@+id/billAmount"
+        app:layout_constraintTop_toBottomOf="@+id/billAmount" />
+
+    <EditText
+        android:id="@+id/editBillAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Enter Bill Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/billAmount"
+        app:layout_constraintStart_toEndOf="@+id/billAmount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="309dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tipPercent"
+        app:layout_constraintTop_toBottomOf="@+id/editBillAmount">
+
+        <RadioButton
+            android:id="@+id/tenPercent"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/tenPercent" />
+
+        <RadioButton
+            android:id="@+id/fifteenPercent"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fifteenPercent" />
+
+        <RadioButton
+            android:id="@+id/eighteenPercent"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/eighteenPercent" />
+
+        <RadioButton
+            android:id="@+id/customTip"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:text="@string/customTip" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/customTipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/customTipLabel"
+        app:layout_constraintStart_toStartOf="@+id/tipPercent"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercent" />
+
+    <SeekBar
+        android:id="@+id/tipSeekBar"
+        android:layout_width="279dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="18dp"
+        android:max="50"
+        android:progress="20"
+        app:layout_constraintStart_toEndOf="@+id/customTipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/viewProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/viewProgress"
+        app:layout_constraintBottom_toBottomOf="@+id/tipSeekBar"
+        app:layout_constraintStart_toEndOf="@+id/tipSeekBar" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/tip"
+        app:layout_constraintStart_toStartOf="@+id/customTipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/customTipLabel" />
+
+    <TextView
+        android:id="@+id/tipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/tipAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/tip"
+        app:layout_constraintStart_toEndOf="@+id/tip" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/total"
+        app:layout_constraintStart_toStartOf="@+id/tip"
+        app:layout_constraintTop_toBottomOf="@+id/tip" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/totalAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/total"
+        app:layout_constraintStart_toEndOf="@+id/total" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/exitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
